@@ -22,8 +22,8 @@ export default function ServicesIndexPage() {
       <PageHero
         title="Our Services"
         description="Comprehensive, drug-free care to help you move comfortably and live fully."
-        imageSrc="/images/chiropractic.jpg"
-        imageAlt="Hands-on chiropractic care supporting comfortable movement"
+        imageSrc="/images/services-hero.jpg"
+        imageAlt="Clinician consulting with a patient about personalized pain-relief care"
       />
 
       <section className="bg-cream py-16 sm:py-20">
