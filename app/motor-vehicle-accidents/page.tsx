@@ -24,19 +24,19 @@ export default function MotorVehicleAccidentsPage() {
         title="Motor Vehicle Accident Care"
         description="Don't let minor injuries become chronic. Get assessed early and recover with confidence."
         imageSrc="/images/mva-hero.jpg"
-        imageAlt="Editorial illustration of a minor two-car collision representing post-accident care needs"
+        imageAlt="Driver on the road at dusk — tasteful context for motor vehicle accident care"
       />
 
       <section className="bg-cream py-16 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <FadeIn>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-cream-soft shadow-soft">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-soft">
               <Image
                 src="/images/mva-hero.jpg"
-                alt="Tasteful editorial image of vehicles in a minor collision"
+                alt="City traffic on a rainy road representing motor vehicle accident recovery care"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain p-6"
+                className="object-cover object-center"
               />
             </div>
           </FadeIn>

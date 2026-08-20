@@ -229,7 +229,7 @@ export const servicePages: ServicePage[] = [
     metaDescription:
       "Acupuncture in Markham to reduce pain and inflammation, restore nerve function, and support natural healing.",
     image: "/images/acupuncture.jpg",
-    imageAlt: "Acupuncture treatment session supporting natural pain relief",
+    imageAlt: "Close-up of an acupuncture needle being placed on a patient's lower back",
     intro:
       "Acupuncture is an ancient form of Chinese medicine involving the insertion of fine needles into the skin at specific points on the body to produce a therapeutic effect. There are no drugs involved — the needles alone create the beneficial effects.",
     body: "Acupuncture encourages natural healing, reduces or relieves pain and improves function of affected areas by decreasing inflammation and muscle spasm, releasing endorphins, and restoring proper nerve function. For those nervous about needles, laser acupuncture — using light and electrical stimulation — can achieve similar effects.",
