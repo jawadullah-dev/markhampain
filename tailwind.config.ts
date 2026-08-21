@@ -9,31 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: {
-          DEFAULT: "#F5F1EA",
-          soft: "#FAF8F4",
+        ink: "#0F1720",
+        surface: "#1A2530",
+        teal: {
+          DEFAULT: "#2FB6A8",
+          dim: "#24968A",
         },
-        gold: {
-          DEFAULT: "#B08D57",
-          light: "#C6A15B",
-          dark: "#8F7040",
+        coral: {
+          DEFAULT: "#FF6B4A",
+          dim: "#E55A3C",
         },
-        charcoal: {
-          DEFAULT: "#1F1D1B",
-          soft: "#5C574F",
-        },
+        mist: "#EDEFF2",
+        mute: "#9AA5B1",
+        hairline: "rgba(237, 239, 242, 0.12)",
       },
       fontFamily: {
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
-      },
-      boxShadow: {
-        soft: "0 8px 30px rgba(31, 29, 27, 0.06)",
-        lift: "0 12px 40px rgba(31, 29, 27, 0.1)",
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        sans: ["var(--font-ibm-plex-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-ibm-plex-mono)", "ui-monospace", "monospace"],
       },
       borderRadius: {
-        "2xl": "1rem",
-        "3xl": "1.5rem",
+        sm: "4px",
+        DEFAULT: "6px",
+        md: "8px",
+      },
+      transitionTimingFunction: {
+        out: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
     },
   },

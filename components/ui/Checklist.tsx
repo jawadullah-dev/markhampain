@@ -11,12 +11,12 @@ export function Checklist({ items, className = "" }: ChecklistProps) {
       {items.map((item) => (
         <li key={item} className="flex items-start gap-3">
           <span
-            className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold"
+            className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center border border-teal text-teal"
             aria-hidden="true"
           >
-            <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
+            <Check className="h-3 w-3" strokeWidth={2.5} />
           </span>
-          <span className="text-charcoal-soft">{item}</span>
+          <span className="text-mute">{item}</span>
         </li>
       ))}
     </ul>

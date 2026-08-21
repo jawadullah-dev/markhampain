@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/sections/PageHero";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { Stagger, StaggerItem } from "@/components/ui/FadeIn";
 import { blogPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -24,11 +24,11 @@ export default function BlogPage() {
         description="Practical insights on pain relief, recovery, and staying active."
       />
 
-      <section className="bg-cream py-16 sm:py-20">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
-          {blogPosts.map((post, index) => (
-            <FadeIn key={post.slug} delay={index * 0.07}>
-              <article className="flex h-full flex-col overflow-hidden rounded-3xl bg-cream-soft shadow-soft">
+      <section className="py-16 sm:py-20">
+        <Stagger className="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-3 lg:px-8">
+          {blogPosts.map((post) => (
+            <StaggerItem key={post.slug}>
+              <article className="group flex h-full flex-col overflow-hidden border border-hairline bg-surface transition duration-200 hover:-translate-y-1 hover:border-teal">
                 <div className="relative aspect-[16/10]">
                   <Image
                     src={post.image}
@@ -41,7 +41,7 @@ export default function BlogPage() {
                 <div className="flex flex-1 flex-col p-6">
                   <time
                     dateTime={post.date}
-                    className="text-xs font-semibold uppercase tracking-wide text-gold-dark"
+                    className="font-mono text-[11px] uppercase tracking-wide text-teal"
                   >
                     {new Date(post.date).toLocaleDateString("en-CA", {
                       year: "numeric",
@@ -49,23 +49,23 @@ export default function BlogPage() {
                       day: "numeric",
                     })}
                   </time>
-                  <h2 className="mt-2 font-serif text-xl text-charcoal">
+                  <h2 className="mt-2 font-display text-xl text-mist">
                     {post.title}
                   </h2>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal-soft">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-mute">
                     {post.excerpt}
                   </p>
                   <Link
                     href={`/blog#${post.slug}`}
-                    className="mt-5 text-sm font-semibold text-gold-dark hover:text-charcoal"
+                    className="mt-5 text-sm font-medium text-coral transition-colors group-hover:text-teal"
                   >
                     Read More →
                   </Link>
                 </div>
               </article>
-            </FadeIn>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </section>
     </>
   );

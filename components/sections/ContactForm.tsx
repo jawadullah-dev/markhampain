@@ -59,6 +59,9 @@ export function ContactForm() {
     }
   }
 
+  const fieldClass =
+    "w-full rounded-md border border-hairline bg-ink px-4 py-3 text-mist outline-none transition focus:border-teal";
+
   return (
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
       {(
@@ -71,7 +74,7 @@ export function ContactForm() {
         <div key={field.id}>
           <label
             htmlFor={field.id}
-            className="mb-2 block text-sm font-semibold text-charcoal"
+            className="mb-2 block font-mono text-xs uppercase tracking-[0.14em] text-mute"
           >
             {field.label}
           </label>
@@ -82,12 +85,12 @@ export function ContactForm() {
             onChange={(e) =>
               setForm((prev) => ({ ...prev, [field.id]: e.target.value }))
             }
-            className="w-full rounded-2xl border border-charcoal/10 bg-cream-soft px-4 py-3 text-charcoal outline-none transition focus:border-gold"
+            className={fieldClass}
             aria-invalid={Boolean(errors[field.id])}
             aria-describedby={errors[field.id] ? `${field.id}-error` : undefined}
           />
           {errors[field.id] && (
-            <p id={`${field.id}-error`} className="mt-1 text-sm text-red-700">
+            <p id={`${field.id}-error`} className="mt-1 text-sm text-coral">
               {errors[field.id]}
             </p>
           )}
@@ -97,7 +100,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-2 block text-sm font-semibold text-charcoal"
+          className="mb-2 block font-mono text-xs uppercase tracking-[0.14em] text-mute"
         >
           Message
         </label>
@@ -108,12 +111,12 @@ export function ContactForm() {
           onChange={(e) =>
             setForm((prev) => ({ ...prev, message: e.target.value }))
           }
-          className="w-full resize-y rounded-2xl border border-charcoal/10 bg-cream-soft px-4 py-3 text-charcoal outline-none transition focus:border-gold"
+          className={`${fieldClass} resize-y`}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? "message-error" : undefined}
         />
         {errors.message && (
-          <p id="message-error" className="mt-1 text-sm text-red-700">
+          <p id="message-error" className="mt-1 text-sm text-coral">
             {errors.message}
           </p>
         )}
@@ -122,18 +125,18 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center rounded-2xl bg-gold px-6 py-3 text-sm font-semibold text-cream transition hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-md bg-coral px-6 py-3 text-sm font-semibold text-ink transition hover:bg-coral-dim hover:scale-[1.02] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
       >
         {status === "loading" ? "Sending…" : "Send Message"}
       </button>
 
       {status === "success" && (
-        <p className="text-sm font-medium text-green-800" role="status">
+        <p className="text-sm font-medium text-teal" role="status">
           Thank you — your message was received. We&apos;ll be in touch soon.
         </p>
       )}
       {status === "error" && (
-        <p className="text-sm font-medium text-red-700" role="alert">
+        <p className="text-sm font-medium text-coral" role="alert">
           Something went wrong. Please call us or try again.
         </p>
       )}

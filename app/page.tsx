@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpineScrollIndicator } from "@/components/brand/SpineLine";
 import { AboutPreview } from "@/components/sections/AboutPreview";
 import { FinalCtaBanner } from "@/components/sections/FinalCtaBanner";
 import { HomeHero } from "@/components/sections/HomeHero";
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <SpineScrollIndicator />
       <HomeHero />
       <TrustStrip />
       <ServicesOverview />

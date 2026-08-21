@@ -184,7 +184,7 @@ export const servicePages: ServicePage[] = [
     title: "Chiropractic Care",
     metaDescription:
       "Drug-free chiropractic care in Markham for back pain, headaches, neck pain, sciatica and joint dysfunction.",
-    image: "/images/chiropractic.jpg",
+    image: "/images/chiropractic.webp",
     imageAlt:
       "Chiropractor performing a spinal adjustment on a patient lying face down",
     intro:
@@ -205,7 +205,7 @@ export const servicePages: ServicePage[] = [
     title: "Massage Therapy",
     metaDescription:
       "Swedish massage therapy in Markham to relieve tension, improve circulation and support recovery from pain and injury.",
-    image: "/images/massage-therapy.jpg",
+    image: "/images/massage-therapy.webp",
     imageAlt:
       "Patient receiving a professional Swedish massage on the upper back",
     intro:
@@ -228,7 +228,7 @@ export const servicePages: ServicePage[] = [
     title: "Acupuncture",
     metaDescription:
       "Acupuncture in Markham to reduce pain and inflammation, restore nerve function, and support natural healing.",
-    image: "/images/acupuncture.jpg",
+    image: "/images/acupuncture.webp",
     imageAlt: "Close-up of an acupuncture needle being placed on a patient's lower back",
     intro:
       "Acupuncture is an ancient form of Chinese medicine involving the insertion of fine needles into the skin at specific points on the body to produce a therapeutic effect. There are no drugs involved — the needles alone create the beneficial effects.",
@@ -250,11 +250,11 @@ export const servicePages: ServicePage[] = [
     title: "Custom Orthotics",
     metaDescription:
       "Custom orthotics in Markham fitted with GaitScan technology to correct foot imbalance and reduce strain.",
-    image: "/images/orthotics.jpg",
+    image: "/images/orthotics-lifestyle.webp",
     imageAlt: "Active person running along the beach at sunset",
-    secondaryImage: "/images/orthotics-gaitscan.jpg",
+    secondaryImage: "/images/orthotics-product.webp",
     secondaryImageAlt:
-      "GaitScan pressure map illustration showing foot biomechanics analysis",
+      "Custom foot orthotic insole designed for biomechanical support",
     intro:
       "A custom orthotic is a device designed to align the foot and ankle into the most anatomically efficient position. They look like insoles but are biomechanical medical appliances custom-made to correct your specific foot imbalance.",
     body: "Custom orthotics work on your feet much like glasses work on your eyes — reducing stress and strain on your body by bringing your feet back into proper alignment. After a thorough history and examination, patients are cast using the GaitScan™ — an innovative diagnostic tool with 4096 sensors and a 300 frames/second scan rate that analyzes patient biomechanics.",
@@ -321,8 +321,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "From lingering back stiffness to recurring headaches, learn the everyday clues that it may be time to book a chiropractic assessment.",
     date: "2025-03-12",
-    image: "/images/blog-1.jpg",
-    imageAlt: "People of all ages staying active and mobile after wellness care",
+    image: "/images/blog-1.webp",
+    imageAlt: "Physiotherapy stretching exercise for wellness and mobility",
   },
   {
     slug: "how-acupuncture-complements-chiropractic-care",
@@ -330,8 +330,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Discover how pairing acupuncture with chiropractic adjustments can support pain relief, reduce inflammation, and speed recovery.",
     date: "2025-04-02",
-    image: "/images/blog-2.jpg",
-    imageAlt: "Active lifestyle imagery representing recovery and mobility",
+    image: "/images/blog-2.webp",
+    imageAlt: "Guided stretching and recovery exercise in a wellness setting",
   },
   {
     slug: "recovering-from-a-motor-vehicle-accident",
@@ -339,8 +339,8 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "A practical overview of common post-accident injuries and how timely chiropractic and massage care can support a healthier recovery.",
     date: "2025-05-18",
-    image: "/images/blog-3.jpg",
-    imageAlt: "Relaxing therapeutic care supporting recovery after injury",
+    image: "/images/blog-3.webp",
+    imageAlt: "Therapeutic exercise supporting recovery after injury",
   },
 ];
 

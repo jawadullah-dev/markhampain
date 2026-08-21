@@ -20,13 +20,13 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
   const initials = getInitials(doctor.name);
 
   return (
-    <article className="overflow-hidden rounded-3xl bg-cream-soft shadow-soft">
-      <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[220px_1fr] md:items-start">
-        <div className="mx-auto w-full max-w-[220px]">
-          <div className="relative aspect-square overflow-hidden rounded-full border-4 border-cream shadow-soft">
+    <article className="border border-hairline bg-surface">
+      <div className="grid gap-8 p-6 sm:p-8 md:grid-cols-[200px_1fr] md:items-start">
+        <div className="mx-auto w-full max-w-[200px]">
+          <div className="relative aspect-square overflow-hidden rounded-md border border-hairline">
             {doctor.useInitialsPlaceholder ? (
               <div
-                className="flex h-full w-full items-center justify-center bg-[#EDE6DA] font-serif text-5xl font-semibold text-gold-dark"
+                className="flex h-full w-full items-center justify-center bg-ink font-mono text-4xl text-teal"
                 role="img"
                 aria-label={doctor.imageAlt}
               >
@@ -37,7 +37,7 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
                 src={doctor.image}
                 alt={doctor.imageAlt}
                 fill
-                sizes="220px"
+                sizes="200px"
                 className="object-cover object-top"
               />
             )}
@@ -45,23 +45,18 @@ export function DoctorCard({ doctor }: DoctorCardProps) {
         </div>
 
         <div>
-          <h2 className="font-serif text-2xl text-charcoal sm:text-3xl">
+          <h2 className="font-display text-2xl tracking-tight text-mist sm:text-3xl">
             {doctor.name}
           </h2>
-          <p className="mt-1 text-sm font-semibold uppercase tracking-[0.16em] text-gold-dark">
+          <p className="mt-1 font-mono text-xs uppercase tracking-[0.16em] text-teal">
             {doctor.credentials}
           </p>
-          <p className="mt-4 text-base leading-relaxed text-charcoal-soft">
-            {doctor.bio}
-          </p>
-          {/* TODO: client will refine Dr. Fujimagari's bio copy */}
+          <p className="mt-4 text-base leading-relaxed text-mute">{doctor.bio}</p>
           {doctor.bioTodo && (
             <span className="sr-only">Bio pending client confirmation</span>
           )}
 
-          <h3 className="mt-8 font-serif text-xl text-charcoal">
-            Clinic Hours
-          </h3>
+          <h3 className="mt-8 font-display text-xl text-mist">Clinic Hours</h3>
           <HoursList hours={doctor.hours} className="mt-4 max-w-md" />
         </div>
       </div>

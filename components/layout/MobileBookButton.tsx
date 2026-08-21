@@ -13,7 +13,7 @@ export function MobileBookButton() {
     <div className="fixed bottom-4 left-0 right-0 z-40 flex justify-center px-4 lg:hidden">
       <Link
         href="/contact"
-        className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-3 text-sm font-semibold text-cream shadow-lift transition hover:bg-gold-light"
+        className="inline-flex items-center gap-2 rounded-md bg-coral px-5 py-3 text-sm font-semibold text-ink transition hover:bg-coral-dim active:scale-[0.98]"
         aria-label="Book an appointment"
       >
         <Calendar className="h-4 w-4" aria-hidden="true" />

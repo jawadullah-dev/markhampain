@@ -11,6 +11,8 @@ import { clinic, navLinks } from "@/lib/content";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const isHome = pathname === "/";
 
   useEffect(() => {
     setOpen(false);
@@ -23,15 +25,27 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 48);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const solid = !isHome || scrolled || open;
+
   return (
-    <header className="sticky top-0 z-50 border-b border-charcoal/5 bg-cream/95 backdrop-blur-md">
+    <header
+      className={`sticky top-0 z-50 transition-colors duration-300 ease-out ${
+        solid
+          ? "border-b border-hairline bg-ink/95 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Logo compact className="min-w-0 shrink" />
 
-        <nav
-          className="hidden items-center gap-1 xl:flex"
-          aria-label="Primary"
-        >
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -42,24 +56,27 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-xl px-3 py-2 text-sm font-medium transition-colors ${
-                  active
-                    ? "text-gold-dark"
-                    : "text-charcoal-soft hover:text-charcoal"
+                className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
+                  active ? "text-teal" : "text-mute hover:text-mist"
                 }`}
               >
                 {link.label}
+                <span
+                  className={`absolute inset-x-3 -bottom-0.5 h-px origin-left bg-teal transition-transform duration-200 ease-out ${
+                    active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex">
           <a
             href={clinic.phoneHref}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-charcoal transition-colors hover:text-gold-dark"
+            className="inline-flex items-center gap-2 font-mono text-sm text-mute transition-colors hover:text-teal"
           >
-            <Phone className="h-4 w-4 text-gold" aria-hidden="true" />
+            <Phone className="h-3.5 w-3.5 text-teal" aria-hidden="true" />
             {clinic.phone}
           </a>
           <Button href="/contact">Book Appointment</Button>
@@ -67,7 +84,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-charcoal/10 text-charcoal xl:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-hairline text-mist xl:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -77,7 +94,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-charcoal/5 bg-cream xl:hidden">
+        <div className="border-t border-hairline bg-ink xl:hidden">
           <nav
             className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6"
             aria-label="Mobile"
@@ -86,16 +103,16 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-xl px-3 py-3 text-base font-medium text-charcoal hover:bg-cream-soft"
+                className="rounded-md px-3 py-3 text-base font-medium text-mist hover:bg-surface"
               >
                 {link.label}
               </Link>
             ))}
             <a
               href={clinic.phoneHref}
-              className="mt-2 inline-flex items-center gap-2 rounded-xl px-3 py-3 text-base font-semibold text-charcoal"
+              className="mt-2 inline-flex items-center gap-2 rounded-md px-3 py-3 font-mono text-sm text-mute"
             >
-              <Phone className="h-4 w-4 text-gold" aria-hidden="true" />
+              <Phone className="h-4 w-4 text-teal" aria-hidden="true" />
               {clinic.phone}
             </a>
             <Button href="/contact" className="mt-2 w-full">

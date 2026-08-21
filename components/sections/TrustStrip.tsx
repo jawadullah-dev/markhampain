@@ -3,18 +3,19 @@ import { clinic, trustBadges } from "@/lib/content";
 
 export function TrustStrip() {
   return (
-    <section className="bg-cream-soft py-10">
+    <section className="border-b border-hairline bg-surface py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <p className="text-center text-base text-charcoal-soft sm:text-lg">
+          <p className="text-center text-base text-mute sm:text-lg">
             Trusted by families across Markham for natural, drug-free pain
-            relief since {clinic.foundedYear}.
+            relief since{" "}
+            <span className="font-mono text-teal">{clinic.foundedYear}</span>.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             {trustBadges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full border border-gold/30 bg-cream px-4 py-2 text-xs font-semibold uppercase tracking-wide text-gold-dark sm:text-sm"
+                className="border border-hairline px-4 py-2 font-mono text-[11px] uppercase tracking-[0.14em] text-teal"
               >
                 {badge}
               </span>

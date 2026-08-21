@@ -11,7 +11,6 @@ export function SectionHeading({
   title,
   description,
   align = "center",
-  light = false,
 }: SectionHeadingProps) {
   return (
     <div
@@ -20,27 +19,15 @@ export function SectionHeading({
       }`}
     >
       {eyebrow && (
-        <p
-          className={`mb-3 text-xs font-semibold uppercase tracking-[0.2em] ${
-            light ? "text-cream/80" : "text-gold-dark"
-          }`}
-        >
+        <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-teal">
           {eyebrow}
         </p>
       )}
-      <h2
-        className={`font-serif text-3xl leading-tight sm:text-4xl ${
-          light ? "text-cream" : "text-charcoal"
-        }`}
-      >
+      <h2 className="font-display text-3xl leading-tight tracking-tight text-mist sm:text-4xl">
         {title}
       </h2>
       {description && (
-        <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            light ? "text-cream/85" : "text-charcoal-soft"
-          }`}
-        >
+        <p className="mt-4 text-base leading-relaxed text-mute sm:text-lg">
           {description}
         </p>
       )}

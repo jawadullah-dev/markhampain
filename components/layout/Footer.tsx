@@ -23,11 +23,11 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-charcoal/5 bg-charcoal text-cream">
+    <footer className="border-t border-hairline bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
         <div className="space-y-4">
-          <Logo tone="light" />
-          <p className="max-w-xs text-sm leading-relaxed text-cream/75">
+          <Logo />
+          <p className="max-w-xs text-sm leading-relaxed text-mute">
             Chiropractic care, acupuncture, massage therapy and custom orthotics
             — helping Markham families move with ease.
           </p>
@@ -35,14 +35,14 @@ export function Footer() {
             <a
               href={clinic.social.facebook}
               aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-cream transition hover:bg-gold"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-hairline text-mute transition hover:border-teal hover:text-teal"
             >
               <FacebookIcon />
             </a>
             <a
               href={clinic.social.instagram}
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/10 text-cream transition hover:bg-gold"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-hairline text-mute transition hover:border-teal hover:text-teal"
             >
               <InstagramIcon />
             </a>
@@ -50,13 +50,15 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-lg text-cream">Quick Links</h3>
+          <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-teal">
+            Quick Links
+          </h3>
           <ul className="mt-4 space-y-2">
             {footerLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-cream/75 transition hover:text-gold-light"
+                  className="text-sm text-mute transition hover:text-mist"
                 >
                   {link.label}
                 </Link>
@@ -66,27 +68,29 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-lg text-cream">Contact</h3>
-          <ul className="mt-4 space-y-3 text-sm text-cream/75">
+          <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-teal">
+            Contact
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-mute">
             <li className="flex gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold-light" />
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-teal" />
               <span>{clinic.address}</span>
             </li>
             <li>
               <a
                 href={clinic.phoneHref}
-                className="inline-flex items-center gap-3 transition hover:text-gold-light"
+                className="inline-flex items-center gap-3 font-mono transition hover:text-teal"
               >
-                <Phone className="h-4 w-4 shrink-0 text-gold-light" />
+                <Phone className="h-4 w-4 shrink-0 text-teal" />
                 {clinic.phone}
               </a>
             </li>
             <li>
               <a
                 href={clinic.emailHref}
-                className="inline-flex items-center gap-3 transition hover:text-gold-light"
+                className="inline-flex items-center gap-3 transition hover:text-teal"
               >
-                <Mail className="h-4 w-4 shrink-0 text-gold-light" />
+                <Mail className="h-4 w-4 shrink-0 text-teal" />
                 {clinic.email}
               </a>
             </li>
@@ -94,22 +98,24 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-serif text-lg text-cream">Hours</h3>
-          <p className="mt-4 text-sm leading-relaxed text-cream/75">
+          <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-teal">
+            Hours
+          </h3>
+          <p className="mt-4 text-sm leading-relaxed text-mute">
             Doctor hours vary by provider. Massage therapy is available by
-            appointment only. Call us to find a time that works for you.
+            appointment only.
           </p>
           <Link
             href="/doctors"
-            className="mt-4 inline-block text-sm font-semibold text-gold-light transition hover:text-cream"
+            className="mt-4 inline-block text-sm font-medium text-coral transition hover:text-mist"
           >
             View doctor schedules →
           </Link>
         </div>
       </div>
 
-      <div className="border-t border-cream/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <div className="border-t border-hairline">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 font-mono text-[11px] text-mute sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>
             © {year} {clinic.name}. All rights reserved.
           </p>

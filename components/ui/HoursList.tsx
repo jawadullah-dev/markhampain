@@ -11,10 +11,10 @@ export function HoursList({ hours, className = "" }: HoursListProps) {
       {hours.map((row) => (
         <li
           key={row.day}
-          className="flex items-baseline justify-between gap-4 border-b border-charcoal/5 pb-2 last:border-0"
+          className="flex items-baseline justify-between gap-4 border-b border-hairline pb-2 last:border-0"
         >
-          <span className="text-sm font-medium text-charcoal">{row.day}</span>
-          <span className="text-right text-sm font-medium text-gold-dark">
+          <span className="font-mono text-sm text-mist">{row.day}</span>
+          <span className="text-right font-mono text-sm text-teal">
             {row.hours}
           </span>
         </li>

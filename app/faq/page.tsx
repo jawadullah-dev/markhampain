@@ -22,7 +22,7 @@ export default function FaqPage() {
         description="Clear answers to help you feel confident before your first visit."
       />
 
-      <section className="bg-cream py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <Accordion items={faqs} />
